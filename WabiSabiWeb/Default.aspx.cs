@@ -7,9 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace WabiSabiWeb
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Carrito : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
 
         }
