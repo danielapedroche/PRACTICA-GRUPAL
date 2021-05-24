@@ -17,6 +17,6 @@
     <p class="auto-style1">
         Total:(coste total del pedido)</p>
     <p class="auto-style1">
-        <asp:Button ID="Button1" runat="server" Text="Tramitar Pedido" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" Text="Tramitar Pedido" OnClick="Update_Click" />
     </p>
 </asp:Content>
