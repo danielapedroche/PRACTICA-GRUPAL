@@ -11,7 +11,7 @@ namespace WabiSabiWeb
 {
 
 
-    public partial class Suscripcion
+    public partial class Supscripcion
     {
 
         /// <summary>
