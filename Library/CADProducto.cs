@@ -11,7 +11,7 @@ using System.Data.SqlTypes;
 
 
 
-namespace WabiSabiLibrary
+namespace Library
 {
     class CADProducto
     {
