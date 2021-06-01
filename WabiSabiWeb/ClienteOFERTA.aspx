@@ -1,16 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClienteOFERTA.aspx.cs" Inherits="WabiSabiWeb.ClienteOFERTA" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="clienteOFERTA.aspx.cs" Inherits="WabiSabiWeb.clienteOFERTA" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <p>
+        Las ofertas que tenemos disponibles para los clientes son:
+    </p>
+    <p>
+        <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+    </p>
+</asp:Content>

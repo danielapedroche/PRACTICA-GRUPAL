@@ -22,7 +22,7 @@ namespace WabiSabiWeb
             }
             else
             {
-                Response.Redirect("ClienteOFERTA.aspx");
+                Response.Redirect("clienteOFERTA.aspx");
             }
         }
     }

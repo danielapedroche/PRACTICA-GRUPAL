@@ -14,14 +14,18 @@ namespace WabiSabiWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ENOferta oferta = new ENOferta();
-            Label1.Text = oferta.invitados();
-            Label1.Visible = true;
+            if (!IsPostBack)
+            {
+                ENOferta oferta = new ENOferta();
+                oferta.Solousuarios = 0;
+                Label1.Text = oferta.invitados();
+                Label1.Visible = true;
+            }
         }
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Usuarios.aspx"); 
+            Response.Redirect("Usuario.aspx"); 
         }
     }
 }

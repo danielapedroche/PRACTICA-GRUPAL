@@ -15,7 +15,7 @@ namespace Library
         public bool create(ENOferta en) { 
      
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Oferta] (id,tipo, descripcion,solousuarios) " + "VALUES ('" + en.Codigo + "', '" +  en.Tipo + "', '" + en.Descripcion + "', '" + en.Solousuarios + "')";
+            string comando = "Insert Into [dbo].[Oferta] (id, tipo, descripcion, solousuarios) " + "VALUES ('" + en.Codigo + "', '" +  en.Tipo + "', '" + en.Descripcion + "', '" + en.Solousuarios + "')";
             try
             {
                 conn.Open();
@@ -120,11 +120,11 @@ namespace Library
           
         }
 
-        public string invitados (ENOferta en)
+        public string invitados (int solousuarios)
         {
             string s = "";
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Oferta] where solousuarios='" + en.Solousuarios + "'";
+            String comando = "select * from [dbo].[Oferta] where solousuarios='" + solousuarios + "'";
             try
             {
                 conn.Open();
@@ -132,8 +132,8 @@ namespace Library
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    s = s + dr["tipo"].ToString();
-                    s = s + " " + dr["tescripcion"].ToString() + "\r\n";
+                    s = " " +  s + dr["tipo"].ToString();
+                    s = s + " " + dr["descripcion"].ToString() + "<br />";
 
                 }
                 return s;

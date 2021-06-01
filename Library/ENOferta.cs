@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +10,7 @@ namespace Library
 {
     public class ENOferta
     {
-        static private int siguientecodigo = 1;
+
         private int codigo;
         private string tipo;
         private string descripcion;
@@ -39,13 +41,13 @@ namespace Library
       
         public ENOferta()
         {
-            codigo = siguientecodigo++;   
+            codigo = siguientecodigo();  
             Tipo = "";
             descripcion = "";
             solousuarios = 0;
         }
         public ENOferta(string tipo, string descripcion, int solousuarios) {
-            codigo = siguientecodigo++;
+            codigo = siguientecodigo();
             this.Tipo = tipo;
             this.Descripcion = descripcion;
             this.solousuarios = solousuarios;
@@ -67,7 +69,7 @@ namespace Library
         }
         public ENOferta (ENOferta oferta)
         {
-            codigo = siguientecodigo++;
+            codigo = siguientecodigo();
             this.Tipo = oferta.Tipo;
             this.Descripcion = oferta.Descripcion;
             this.Solousuarios = oferta.Solousuarios;
@@ -102,9 +104,18 @@ namespace Library
 
         public string invitados()
         {
-            
             CADOferta oferta = new CADOferta();
-            return oferta.invitados(this);
+            return oferta.invitados(this.Solousuarios);
+        }
+        private int siguientecodigo()
+        {
+            string constring = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
+            SqlConnection conn = new SqlConnection(constring); 
+            conn.Open();
+            SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Oferta", conn);
+            Int32 count = (Int32)comm.ExecuteScalar();
+            count++;
+            return count;
         }
     }
 }
