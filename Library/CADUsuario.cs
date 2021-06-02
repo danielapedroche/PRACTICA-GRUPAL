@@ -26,7 +26,7 @@ namespace Library
         {
             DateTime fecha = en.Fechanac;
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Usuarios] (nif, email, contrasenya, nombre, apellidos,telefono, direccion, fechaNac) " + "VALUES ('" + en.Nif + "', '" + en.Email+ "', " + en.Contrasenya + "', " + en.Nombre + "', " + en.Apellidos + "', " + en.Telefono + "', " + en.Direccion + "', " + fecha.ToString() + ")";
+            string comando = "Insert Into [dbo].[Usuario] (nif, email, contrasenya, nombre, apellidos,telefono, direccion, fechaNac) " + "VALUES ('" + en.Nif + "', '" + en.Email+ "', '" + en.Contrasenya + "', '" + en.Nombre + "', '" + en.Apellidos + "', '" + en.Telefono + "', '" + en.Direccion + "', '" + fecha.ToString() + "')";
             try
             {
                 conn.Open();
@@ -45,7 +45,7 @@ namespace Library
         public bool read(ENUsuario en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Usuarios] where nif='" + en.Nif + "'";
+            String comando = "select * from [dbo].[Usuario] where nif='" + en.Nif + "'";
             try
             {
                 conn.Open();
@@ -78,7 +78,7 @@ namespace Library
         public bool update(ENUsuario en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "UPDATE [dbo].[Usuarios] " + "SET nombre = '" + en.Nombre + "',  email = " + en.Email + "', contrasenya= " + en.Contrasenya + "', direccion = " + en.Direccion + "', apellidos = " + en.Apellidos + "', telefono = " + en.Telefono + "', fechanac = " + en.Fechanac + "where nif ='" + en.Nif + "'";
+            string comando = "UPDATE [dbo].[Usuario] " + "SET nombre = '" + en.Nombre + "',  email = " + en.Email + "', contrasenya= " + en.Contrasenya + "', direccion = " + en.Direccion + "', apellidos = " + en.Apellidos + "', telefono = " + en.Telefono + "', fechanac = " + en.Fechanac + "where nif ='" + en.Nif + "'";
             try
             {
                 conn.Open();
