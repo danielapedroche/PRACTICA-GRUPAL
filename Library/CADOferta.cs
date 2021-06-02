@@ -122,9 +122,13 @@ namespace Library
 
         public string invitados (int solousuarios)
         {
+            String comando = "";
             string s = "";
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Oferta] where solousuarios='" + solousuarios + "'";
+            if (solousuarios == 0)
+                comando = "select * from [dbo].[Oferta] where solousuarios='" + solousuarios + "'";
+            else
+                comando = "select * from [dbo].[Oferta]";
             try
             {
                 conn.Open();

@@ -72,6 +72,11 @@ namespace Library
             telefono = "";
             direccion = "";
         }
+        public ENUsuario(string nif, string contrasenya)
+        {
+            this.nif = nif;
+            this.contrasenya = contrasenya;
+        }
         public ENUsuario(string nif, string email, string contrasenya, string nombre, string apellidos, string telefono, string direccion, DateTime fechaNac)
         {
             this.nif = nif;
