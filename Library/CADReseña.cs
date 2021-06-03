@@ -18,7 +18,7 @@ namespace Library
         public bool create(ENReseña en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Reseñas] (id, contenido) " + "VALUES ('" + en.Id + "', '" + en.Contenido + ")";
+            string comando = "Insert Into Reseña (id, contenido) " + "VALUES ('" + en.Id + "', '" + en.Contenido + "')";
             try
             {
                 conn.Open();
@@ -32,12 +32,13 @@ namespace Library
                 Console.WriteLine("Error: " + e);
                 return false;
             }
+            Console.WriteLine(en.Id + en.Contenido);
             return true;
         }
         public bool read(ENReseña en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Reseñas] where id='" + en.Id + "'";
+            String comando = "select * from [dbo].[Reseña] where id = '" + en.Id + "'";
             try
             {
                 conn.Open();
@@ -59,20 +60,22 @@ namespace Library
                 conn.Close();
                 return false;
             }
+
         }
         public bool update(ENReseña en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "UPDATE [dbo].[Reseñas] " + "SET contenido = '" + en.Contenido + "where id ='" + en.Id + "'";
+            string comando = "UPDATE [dbo].[Reseña] " + "SET contenido = '" + en.Contenido + "' where id ='" + en.Id + "'";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 conn.Close();
+                Console.WriteLine("Error: " + e);
                 return false;
             }
             finally

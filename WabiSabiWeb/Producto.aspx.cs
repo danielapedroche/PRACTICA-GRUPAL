@@ -90,5 +90,24 @@ namespace WabiSabiWeb
             }
 
         }
+        protected void Carrito_Click(object sender, EventArgs e)
+        {
+            ENProducto enu = new ENProducto();
+            enu.Codigo = int.Parse(Codigo.Text);
+            if (enu.read())
+            {
+                Codigo.Text = enu.Codigo.ToString();
+                Nombre.Text = enu.Nombre;
+                Descripcion.Text = enu.Descripcion;
+                Precio.Text = enu.Precio.ToString();
+                enu.Pedido = 1;
+            }
+            else
+            {
+                LabelRespuesta.Text = "Error, no se ha podido añadir el producto al carrito.";
+            }
+
+            LabelRespuesta.Text = "El producto se ha añadido al carrito correctamente.";
+        }
     }
 }
