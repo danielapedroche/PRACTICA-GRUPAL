@@ -8,15 +8,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p class="auto-style1">
-        Carrito:</p>
+        Carrito</p>
     <p class="auto-style1">
-        -(Imagen) Precio Ud. x Cantidad
-        <asp:Button ID="Button2" runat="server" Height="19px" Text="Eliminar" Width="65px" />
-        <asp:Button ID="Button3" runat="server" Height="19px" Text="+1" Width="40px" />
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     </p>
     <p class="auto-style1">
-        Total:(coste total del pedido)</p>
+        Total:<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    </p>
     <p class="auto-style1">
         <asp:Button ID="Button1" runat="server" Text="Tramitar Pedido" OnClick="Update_Click" />
     </p>
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 </asp:Content>
