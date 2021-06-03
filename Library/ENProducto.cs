@@ -12,6 +12,7 @@ namespace Library
         private string nombre;
         private string descripcion;
         private float precio;
+        private int pedido;
         public int Codigo
         {
             get { return codigo; }
@@ -32,19 +33,26 @@ namespace Library
             get { return precio; }
             set { precio = value; }
         }
+        public int Pedido
+        {
+            get { return pedido; }
+            set { pedido = value; }
+        }
         public ENProducto()
         {
             codigo = 0;
             nombre = "";
             descripcion = "";
             precio = 0;
+            pedido = 0;
         }
-        public ENProducto(int codigo, string nombre, string descripcion, float precio)
+        public ENProducto(int codigo, string nombre, string descripcion, float precio, int pedido)
         {
             this.codigo = codigo;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.precio = precio;
+            this.pedido = pedido;
         }
         public ENProducto(ENProducto producto)
         {
@@ -52,6 +60,7 @@ namespace Library
             this.nombre = producto.nombre;
             this.descripcion = producto.descripcion;
             this.precio = producto.precio;
+            this.pedido = producto.pedido;
         }
         public bool create()
         {
