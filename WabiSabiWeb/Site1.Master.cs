@@ -13,9 +13,5 @@ namespace WabiSabiWeb
         {
 
         }
-        protected void Navigate_Usuario(object sender, EventArgs e)
-        {
-            Response.Redirect("Usuario.aspx");
-        }
     }
 }

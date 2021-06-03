@@ -8,12 +8,11 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-using Library;
 
 
 
 
-namespace Library
+namespace WabiSabiLibrary
 {
     class CADUsuario
     {
@@ -24,9 +23,8 @@ namespace Library
         }
         public bool create(ENUsuario en)
         {
-            DateTime fecha = en.Fechanac;
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Usuario] (nif, email, contrasenya, nombre, apellidos,telefono, direccion, fechaNac) " + "VALUES ('" + en.Nif + "', '" + en.Email+ "', '" + en.Contrasenya + "', '" + en.Nombre + "', '" + en.Apellidos + "', '" + en.Telefono + "', '" + en.Direccion + "', '" + fecha.ToString() + "')";
+            string comando = "Insert Into [dbo].[Usuarios] (nif, email, contrasenya, nombre, apellidos,telefono, direccion, fechaNac) " + "VALUES ('" + en.Nif + "', '" + en.Email+ "', " + en.Contrasenya + en.Nombre + "', " + en.Apellidos + "', " + en.Telefono + "', " + en.Direccion + "', " + en.FechaNac.ToString() + ")";
             try
             {
                 conn.Open();
@@ -45,24 +43,22 @@ namespace Library
         public bool read(ENUsuario en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Usuario] where nif='" + en.Nif + "'";
+            String comando = "select * from [dbo].[Usuarios] where nif='" + en.Nif + "'";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 dr.Read();
-                if (dr["nif"].ToString() == en.Nif)
+                if (int.Parse(dr["nif"].ToString()) == en.Nif)
                 {
-                    string iDate = dr["fechanac"].ToString();
-                    DateTime oDate = Convert.ToDateTime(iDate);
                     en.Email = dr["email"].ToString();
                     en.Nombre = dr["nombre"].ToString();
                     en.Contrasenya= dr["contrasenya"].ToString();
                     en.Direccion= dr["direccion"].ToString();
                     en.Apellidos = dr["apellidos"].ToString();
                     en.Telefono = dr["telefono"].ToString();
-                    en.Fechanac= oDate;
+                    en.FechaNac= dr["fechanac"].ToString();
                     dr.Close();
                     conn.Close();
                     return true;
@@ -78,7 +74,7 @@ namespace Library
         public bool update(ENUsuario en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "UPDATE [dbo].[Usuario] " + "SET nombre = '" + en.Nombre + "',  email = " + en.Email + "', contrasenya= " + en.Contrasenya + "', direccion = " + en.Direccion + "', apellidos = " + en.Apellidos + "', telefono = " + en.Telefono + "', fechanac = " + en.Fechanac + "where nif ='" + en.Nif + "'";
+            string comando = "UPDATE [dbo].[Usuarios] " + "SET nombre = '" + en.Nombre + "',  email = " + en.Email + "', contrasenya= " + en.contrasenya + "', direccion = " + en.Direccion + "', apellidos = " + en.Apellidos + "', telefono = " + en.Telefono + "', fechanac = " + en.FechaNac + "where nif ='" + en.Nif + "'";
             try
             {
                 conn.Open();

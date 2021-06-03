@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    public class ENMenu
+    class ENMenu
     {
         private int id;
         private string nombre;
