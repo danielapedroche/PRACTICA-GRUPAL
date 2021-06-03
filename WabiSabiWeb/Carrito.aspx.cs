@@ -19,7 +19,7 @@ namespace WabiSabiWeb
             {
                 Label2.Text = "Resumen pedido:" + en.Nombre;
                 Label3.Text =" " + en.CosteTotal.ToString();
-                Session["CosteTotal"] = en.CosteTotal.ToString();
+                Session["CosteTotal"] = en.CosteTotal;
             }
             else
                 Label1.Text = "Error al mostrar el pedido";

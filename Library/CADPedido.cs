@@ -14,13 +14,13 @@ namespace Library
 
         public CADPedido()
         {
-            constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
         }
         public bool createPedido(ENPedido en)
         {
             SqlConnection conn = null;
-            String comando = "Insert into Pedido(Id,Fecha,Precio,Direccion,Estado) VALUES ('" + en.Id + "','" +
-                en.Fecha + "','" + en.Precio + "','" + en.Direccion + "','" + en.Estado + "')";
+            String comando = "Insert into Pedido(Fecha,Precio,Direccion,Estado) VALUES ('" + en.Fecha + 
+                "','" + en.Precio + "','" + en.Direccion + "','" + en.Estado + "')";
 
             try
             {
@@ -69,7 +69,7 @@ namespace Library
         public void readPedido(ENPedido en)
         {
             SqlConnection conn = null;
-            String comando = "Select * from Pedido where Id = '" + en.Id + "'";
+            String comando = "Select * from Usuario where nombre = '" + en.Nombre + "'";
 
             try
             {
@@ -81,10 +81,8 @@ namespace Library
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    en.Fecha = dr.GetDateTime(1);
-                    en.Precio = dr.GetFloat(2);
-                    en.Direccion = dr.GetString(3);
-                    en.Estado = dr.GetString(4);
+                    en.Direccion = dr.GetString(6);
+                    
                 }
                 else
                 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENPedido
+    public class ENPedido
     {
         public float Precio
         {
@@ -33,11 +33,18 @@ namespace Library
             get { return _id; }
             set { _id = value; }
         }
+        public string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
         private DateTime _fecha;
         private string _direccion;
         private string _estado;
         private int _id;
         private float _precio;
+        private string _nombre;
 
         public ENPedido()
         {
@@ -46,16 +53,18 @@ namespace Library
             this._estado = "";
             this._id = -1;
             this._precio = 0.0F;
+            this._nombre = "";
 
         }
 
-        public ENPedido(int id, DateTime fecha, int precio, string direccion, string estado)
+        public ENPedido(int id, DateTime fecha, int precio, string direccion, string estado, string nombre)
         {
             this._fecha = fecha;
             this._direccion = direccion;
             this._estado = estado;
             this._id = id;
             this._precio = precio;
+            this._nombre = nombre;
         }
 
         public bool createPedido()
