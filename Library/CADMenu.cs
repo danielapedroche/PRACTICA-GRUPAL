@@ -26,7 +26,7 @@ namespace Library
 
             SqlConnection conn = new SqlConnection(constring);
 
-            string comando = "Insert Into [dbo].[Menu] (id, nombre, precio) " + "VALUES ('" + en.Id + "', '" + en.Nombre + "', " + en.Precio + ")";
+            string comando = "Insert Into Menu (id, nombre, precio) " + "VALUES ('" + en.Id + "', '" + en.Nombre + "', " + en.Precio + ")";
 
             try
 
