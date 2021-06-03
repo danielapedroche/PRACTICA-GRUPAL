@@ -16,8 +16,8 @@ namespace WabiSabiWeb
         }
         protected void Read_Click(object sender, EventArgs e)
         {
+            int codigo = int.Parse(this.Codigo.Text);
             ENProducto enu = new ENProducto();
-            enu.Codigo = int.Parse(Codigo.Text);
             if (enu.read())
             {
                 Codigo.Text = enu.Codigo.ToString();
