@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WabiSabiLibrary
+namespace Library
 {
     public class ENUsuario
     {
@@ -18,7 +18,7 @@ namespace WabiSabiLibrary
         private DateTime fechaNac;
 
 
-        public int Nif
+        public string Nif
         {
             get { return nif; }
             set { nif = value; }
@@ -71,7 +71,11 @@ namespace WabiSabiLibrary
             apellidos = "";
             telefono = "";
             direccion = "";
-            fechaNac = "";
+        }
+        public ENUsuario(string nif, string contrasenya)
+        {
+            this.nif = nif;
+            this.contrasenya = contrasenya;
         }
         public ENUsuario(string nif, string email, string contrasenya, string nombre, string apellidos, string telefono, string direccion, DateTime fechaNac)
         {
@@ -97,7 +101,7 @@ namespace WabiSabiLibrary
         }
         public bool create()
         {
-            CADUsuariocad = new CADUsuario();
+            CADUsuario cad = new CADUsuario();
             return cad.create(this);
         }
         public bool update()

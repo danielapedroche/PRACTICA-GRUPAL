@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
-namespace WabiSabiLibrary
+namespace Library
 {
     class CADOferta
     {
@@ -19,13 +15,21 @@ namespace WabiSabiLibrary
         public bool create(ENOferta en) { 
      
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Ofertas] (codigo,tipo, descripcion) " + "VALUES ('" + en.Codigo + en.Tipo + "', '" + en.Descripcion + ")";
+            string comando = "Insert Into [dbo].[Oferta] (id, tipo, descripcion, solousuarios) " + "VALUES ('" + en.Codigo + "', '" +  en.Tipo + "', '" + en.Descripcion + "', '" + en.Solousuarios + "')";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
-                cmd.ExecuteNonQuery();
+                int affected = cmd.ExecuteNonQuery();
                 conn.Close();
+                if(affected == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception e)
             {
@@ -33,26 +37,29 @@ namespace WabiSabiLibrary
                 Console.WriteLine("Error: " + e);
                 return false;
             }
-            return true;
+            
         }
         public bool read(ENOferta en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Ofertas] where codigo='" + en.Codigo + "'";
+            String comando = "select * from [dbo].[Oferta] where id='" + en.Codigo + "'";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
                 SqlDataReader dr = cmd.ExecuteReader();
-                dr.Read();
-                if (int.Parse(dr["codigo"].ToString()) == en.Codigo)
+                while (dr.Read())
                 {
-     
-                    en.Tipo = int.Parse(dr["tipo"].ToString());
-                    en.Descripcion = dr["descripcion"].ToString();
-                    dr.Close();
-                    conn.Close();
-                    return true;
+                    if (int.Parse(dr["id"].ToString()) == en.Codigo)
+                    {
+
+                        en.Tipo = dr["tipo"].ToString();
+                        en.Descripcion = dr["descripcion"].ToString();
+                        en.Solousuarios = int.Parse(dr["solousuarios"].ToString());
+                        dr.Close();
+                        conn.Close();
+                        return true;
+                    }
                 }
                 return false;
             }
@@ -65,45 +72,84 @@ namespace WabiSabiLibrary
         public bool update(ENOferta en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "UPDATE [dbo].[Ofertas] " + "SET codigo = '" + en.Codigo + "',  tipo = " + en.Tipo + "', descripcion" + en.Descripcion +  "'";
+            string comando = "UPDATE [dbo].[Oferta] " + "SET tipo = '" + en.Tipo + "', descripcion = '" + en.Descripcion + "', solousuarios = '" + en.Solousuarios +  "' " + "WHERE id = " + en.Codigo;
+       
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
-                cmd.ExecuteNonQuery();
+              int affected =   cmd.ExecuteNonQuery();
+                conn.Close();
+                if (affected == 1)
+                    return true;
+                else
+                    return false;
             }
             catch (Exception)
             {
                 conn.Close();
                 return false;
             }
-            finally
-            {
-                conn.Close();
-            }
-            return true;
+           
         }
         public bool delete(ENOferta en)
         {
             SqlConnection conn = new SqlConnection(constring); ;
-            string comando = "Delete from [dbo].[Ofertas] where codigo = '" + en.Codigo + "'";
+            string comando = "Delete from [dbo].[Oferta] where id = '" + en.Codigo + "'";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
-                cmd.ExecuteNonQuery();
+               int num =  cmd.ExecuteNonQuery();
+                if(num == 1)
+                {
+                    conn.Close();
+                    return true;
+                }
+                else{
+                    conn.Close();
+                    return false;
+                }
+
             }
             catch (Exception)
             {
                 conn.Close();
                 return false;
             }
-            finally
+          
+        }
+
+        public string invitados (int solousuarios)
+        {
+            String comando = "";
+            string s = "";
+            SqlConnection conn = new SqlConnection(constring);
+            if (solousuarios == 0)
+                comando = "select * from [dbo].[Oferta] where solousuarios='" + solousuarios + "'";
+            else
+                comando = "select * from [dbo].[Oferta]";
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    s = " " +  s + dr["tipo"].ToString();
+                    s = s + " " + dr["descripcion"].ToString() + "<br />";
+
+                }
+                return s;
+            }
+            catch (Exception)
             {
                 conn.Close();
+                return "error";
             }
-            return true;
         }
+
+
 
     }
 }

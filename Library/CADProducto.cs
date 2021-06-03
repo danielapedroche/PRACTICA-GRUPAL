@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
-using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
+using System.Configuration;
 
-
-
-namespace WabiSabiLibrary
+namespace Library
 {
     class CADProducto
     {
@@ -23,7 +18,7 @@ namespace WabiSabiLibrary
         public bool create(ENProducto en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Productos] (codigo, nombre, descripcion, precio) " + "VALUES ('" + en.Codigo + "', '" + en.Nombre + "', " + en.Descripcion + ")";
+            string comando = "Insert Into [dbo].[Producto] (codigo, nombre, descripcion, precio) " + "VALUES ('" + en.Codigo + "', '" + en.Nombre + "', " + en.Descripcion + en.Precio + "')";
             try
             {
                 conn.Open();
