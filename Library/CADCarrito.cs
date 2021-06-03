@@ -14,7 +14,7 @@ namespace Library
 
         public CADCarrito()
         {
-            constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
         }
         public bool createCarrito(ENCarrito en)
         {
@@ -41,7 +41,40 @@ namespace Library
         }
         public bool updateCarrito(ENCarrito en)
         {
-            //añadir los productos al carrito
+            SqlConnection conn = null;
+            String comando = "Select * from Producto where pedido = '" + 1 + "'";
+
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        en.Nombre = en.Nombre + " " + dr.GetString(1) + " " + dr.GetDouble(3) + "€ ,";
+                        en.CosteTotal = en.CosteTotal + dr.GetDouble(3);
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+
+                dr.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
             return true;
         }
 
