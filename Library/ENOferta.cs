@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WabiSabiLibrary
+namespace Library
 {
-    class ENOferta
+    public class ENOferta
     {
-        static private int siguientecodigo = 1;
-        static private int codigo;
-        private int tipo;
+
+        private int codigo;
+        private string tipo;
         private string descripcion;
+        private int solousuarios;
        
     
-        public int Tipo
+        public string Tipo
         {
             get { return tipo; }
             set { tipo = value; }
@@ -28,49 +31,91 @@ namespace WabiSabiLibrary
         public int Codigo
         {
             get { return codigo; }
-            private set { }
+            set { codigo = value;  }
+        }
+        public int Solousuarios
+        {
+            get { return solousuarios; }
+            set { solousuarios = value; }
         }
       
         public ENOferta()
         {
-            codigo = siguientecodigo++;   
-            Tipo = 0;
+            codigo = siguientecodigo();  
+            Tipo = "";
             descripcion = "";
+            solousuarios = 0;
         }
-        public ENOferta(int tipo, string descripcion) {
-            codigo = siguientecodigo++;
+        public ENOferta(string tipo, string descripcion, int solousuarios) {
+            codigo = siguientecodigo();
             this.Tipo = tipo;
             this.Descripcion = descripcion;
+            this.solousuarios = solousuarios;
+        }
+        public ENOferta(int codigo)
+        {
+            this.Codigo = codigo;
+            Tipo = "";
+            Descripcion = "";
+            Solousuarios = 0;
+        }
+
+        public ENOferta (int codigo, string descripcion, string tipo, int solousuarios)
+        {
+            this.Codigo = codigo;
+            this.Descripcion = descripcion;
+            this.Tipo = tipo;
+            this.Solousuarios = solousuarios;
         }
         public ENOferta (ENOferta oferta)
         {
-            codigo = siguientecodigo++;
+            codigo = siguientecodigo();
             this.Tipo = oferta.Tipo;
             this.Descripcion = oferta.Descripcion;
+            this.Solousuarios = oferta.Solousuarios;
         }
 
-        public void delete()
+        public bool delete()
         {
             CADOferta oferta = new CADOferta();
-            oferta.delete(this);
+            return oferta.delete(this);
         }
-        public void create()
+        public bool create()
         {
             CADOferta oferta = new CADOferta();
-            oferta.create(this);
+           bool creado =  oferta.create(this);
+            return creado;
         }
 
         public void read()
         {
+          
             CADOferta oferta = new CADOferta();
             oferta.read(this);
         }
 
-        public void update()
+        public bool update()
         {
             this.Tipo = tipo;
             CADOferta oferta = new CADOferta();
-            oferta.update(this);
+            bool affected =oferta.update(this);
+            return affected;
+        }
+
+        public string invitados()
+        {
+            CADOferta oferta = new CADOferta();
+            return oferta.invitados(this.Solousuarios);
+        }
+        private int siguientecodigo()
+        {
+            string constring = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ToString();
+            SqlConnection conn = new SqlConnection(constring); 
+            conn.Open();
+            SqlCommand comm = new SqlCommand("SELECT COUNT(*) FROM Oferta", conn);
+            Int32 count = (Int32)comm.ExecuteScalar();
+            count++;
+            return count;
         }
     }
 }
