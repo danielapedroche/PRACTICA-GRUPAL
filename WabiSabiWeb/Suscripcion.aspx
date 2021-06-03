@@ -11,10 +11,6 @@
         <h1>Suscripciones</h1>
     </div>
     <div>
-        Id:
-        <asp:TextBox ID="Numero" runat="server"  Width="173px"></asp:TextBox>
-        <br />
-        <br />
         Tipo:
         <asp:TextBox ID="Tipo" runat="server"  Width="173px"></asp:TextBox>
         <br />

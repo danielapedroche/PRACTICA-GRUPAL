@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Library;
 
 namespace WabiSabiWeb
 {
@@ -14,23 +13,22 @@ namespace WabiSabiWeb
         {
 
         }
+
         protected void Read_Click(object sender, EventArgs e)
         {
-            ENUsuario usuario = new ENUsuario(Nif.Text, Contrasenya.Text);
-            if (usuario.read())
-            {
-                Session["Username"] = usuario.Nombre;
-                Response.Redirect("Default.aspx");
-            }
-            else
-            {
-                LabelRespuesta.Text = "Usuario no encontrado";
-                LabelRespuesta.Visible = true;
-            }
+
         }
-        protected void Login_Click(object sender, EventArgs e)
+        protected void Update_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Registro.aspx");
+
+        }
+        protected void Create_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
