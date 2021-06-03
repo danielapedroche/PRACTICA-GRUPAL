@@ -26,13 +26,16 @@
         Precio:
         <asp:TextBox ID="Precio" runat="server"  Width="173px"></asp:TextBox>
         <br />
-        <asp:Button ID="Leer" runat="server" Text="Leer" OnClick="Leer_Click" />
+        <asp:Button ID="Leer" runat="server" Text="Leer" OnClick="Read_Click" />
         &nbsp;
-        <asp:Button ID="Crear" runat="server" Text="Crear" OnClick="Crear_Click"/>
+        <asp:Button ID="Crear" runat="server" Text="Crear" OnClick="Create_Click"/>
         &nbsp;
-        <asp:Button ID="Actualizar" runat="server" Text="Actualizar" OnClick="Actualizar_Click"/>
+        <asp:Button ID="Actualizar" runat="server" Text="Actualizar" OnClick="Update_Click"/>
         &nbsp;
-        <asp:Button ID="Borrar" runat="server" Text="Borrar" OnClick="Borrar_Click"/>
+        <asp:Button ID="Borrar" runat="server" Text="Borrar" OnClick="Delete_Click"/>
+        <br />
+        &nbsp;
+        <asp:Button ID="Carrito" runat="server" Text="Comprar" OnClick="Carrito_Click"/>
         <br />
         <asp:label ID="LabelRespuesta" runat="server" Text=" " />
     </div>

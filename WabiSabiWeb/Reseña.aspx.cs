@@ -27,7 +27,7 @@ namespace WabiSabiWeb
             }
             else
             {
-                LabelRespuesta.Text = "Error, no se encuentra la suscripcion.";
+                LabelRespuesta.Text = "Error, no se encuentra la reseña.";
             }
         }
         protected void Update_Click(object sender, EventArgs e)
@@ -37,11 +37,11 @@ namespace WabiSabiWeb
             enu.Contenido = Contenido.Text;
             if (enu.update())
             {
-                LabelRespuesta.Text = "Actualizado la suscripcion.";
+                LabelRespuesta.Text = "Actualizado la reseña.";
             }
             else
             {
-                LabelRespuesta.Text = "Error, no se ha podido actualizar la suscripcion.";
+                LabelRespuesta.Text = "Error, no se ha podido actualizar la reseña.";
             }
 
         }
@@ -49,21 +49,21 @@ namespace WabiSabiWeb
         {
             if (Numero.Text == "" || Contenido.Text == "")
             {
-                LabelRespuesta.Text = "Completa todos los campos antes de crear un menu por favor";
+                LabelRespuesta.Text = "Completa todos los campos antes de crear una reseña por favor";
             }
             else
             {
 
                 ENReseña enu = new ENReseña();
                 enu.Id = int.Parse(Numero.Text);
-                enu.Contenido = enu.Contenido;
+                enu.Contenido = Contenido.Text;
                 if (enu.create())
                 {
-                    LabelRespuesta.Text = "Suscripción creada.";
+                    LabelRespuesta.Text = "Reseña creada.";
                 }
                 else
                 {
-                    LabelRespuesta.Text = "Error, no se ha podido crear la suscripcion.";
+                    LabelRespuesta.Text = "Error, no se ha podido crear la reseña.";
                 }
             }
         }
@@ -76,11 +76,11 @@ namespace WabiSabiWeb
             {
                 Numero.Text = "";
                 Contenido.Text = "";
-                LabelRespuesta.Text = "La suscripcion ha sido eliminada.";
+                LabelRespuesta.Text = "La reseña ha sido eliminada.";
             }
             else
             {
-                LabelRespuesta.Text = "Error, no se ha podido eliminar la suscripcion.";
+                LabelRespuesta.Text = "Error, no se ha podido eliminar la reseña.";
             }
         }
     }

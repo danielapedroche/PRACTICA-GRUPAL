@@ -23,7 +23,7 @@ namespace Library
         public bool create(ENProducto en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "Insert Into [dbo].[Productos] (codigo, nombre, descripcion, precio) " + "VALUES ('" + en.Codigo + "', '" + en.Nombre + "', " + en.Descripcion + ")";
+            string comando = "Insert Into Producto (codigo, nombre, descripcion, precio) " + "VALUES ('" + en.Codigo + "', '" + en.Nombre + "', '" + en.Descripcion + "','" + en.Precio + "')";
             try
             {
                 conn.Open();
@@ -42,7 +42,7 @@ namespace Library
         public bool read(ENProducto en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            String comando = "select * from [dbo].[Productos] where codigo='" + en.Codigo + "'";
+            String comando = "select * from [dbo].[Producto] where codigo='" + en.Codigo + "'";
             try
             {
                 conn.Open();
@@ -70,16 +70,17 @@ namespace Library
         public bool update(ENProducto en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "UPDATE [dbo].[Productos] " + "SET nombre = '" + en.Nombre + "',  precio = " + en.Precio + "', descripcion" + en.Descripcion + "where codigo ='" + en.Codigo + "'";
+            string comando = "UPDATE [dbo].[Producto] " + "SET nombre = '" + en.Nombre + "',  descripcion = '" + en.Descripcion + "',  precio = " + en.Precio + " where Codigo ='" + en.Codigo + "'";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(comando, conn);
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 conn.Close();
+                Console.WriteLine("Error: " + e);
                 return false;
             }
             finally
@@ -91,7 +92,7 @@ namespace Library
         public bool delete(ENProducto en)
         {
             SqlConnection conn = new SqlConnection(constring); ;
-            string comando = "Delete from [dbo].[Productos] where codigo = '" + en.Codigo + "'";
+            string comando = "Delete from [dbo].[Producto] where codigo = '" + en.Codigo + "'";
             try
             {
                 conn.Open();

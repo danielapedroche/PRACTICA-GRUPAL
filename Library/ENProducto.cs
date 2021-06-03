@@ -38,6 +38,7 @@ namespace Library
             get { return pedido; }
             set { pedido = value; }
         }
+        
         public ENProducto()
         {
             codigo = 0;
