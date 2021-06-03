@@ -7,17 +7,38 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            color: #339966;
+        }
+    </style>
 </head>
 
 <body>
+    <div style="width:100%;text-align:right;">
+
+             <asp:Button ID="ButtonUser" runat="server" Text="Login/Register" NavigateUrl="~/Usuario.aspx" OnClick="Usuario" />
+    </div>
+    <form runat="server">
+        <asp:Button id="button1" Text="Noche"
+        BackColor="#FFCC80" runat="server" />
+    </form>
+    <div style="width:100%;text-align:center;">
     <form id="form1" runat="server"  DynamicVerticalOffset="10" Font-Bold="True" Font-Size="Medium" Height="20px"  ForeColor="Green" 
                                      Orientation="Horizontal" >
+                             <h1 class="auto-style1">BIENVENIDOS A WABI SABI</h1>
+
      <div>
           
             <div>
-                    <h1>
-                        BIENVENIDOS A
-                    WABI SABI</h1>
+                                     
+
+                
+                 </div>
+     <div>
+     </div>
+
+                    
 <%-- 
   
                 /*
