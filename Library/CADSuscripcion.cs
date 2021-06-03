@@ -26,7 +26,7 @@ namespace Library
 
             SqlConnection conn = new SqlConnection(constring);
 
-            string comando = "Insert Into [dbo].[Suscripcion] (id, tipo) " + "VALUES ('" + en.Id + "', '" + en.Tipo + ")";
+            string comando = "Insert Into [dbo].[Suscripcion] (id, tipo) " + "VALUES ('" + en.Id + "', '" + en.Tipo + "')";
 
             try
 
@@ -116,7 +116,7 @@ namespace Library
 
             SqlConnection conn = new SqlConnection(constring);
 
-            string comando = "UPDATE [dbo].[Suscripcion] " + "SET tipo = '" + en.Tipo + "where id ='" + en.Id + "'";
+            string comando = "UPDATE [dbo].[Suscripcion] " + "SET tipo = '" + en.Tipo + "'where id = '" + en.Id + "'";
 
             try
 

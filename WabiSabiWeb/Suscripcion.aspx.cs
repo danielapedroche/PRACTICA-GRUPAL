@@ -55,7 +55,7 @@ namespace WabiSabiWeb
 
                 ENSuscripcion enu = new ENSuscripcion();
                 enu.Id = int.Parse(Numero.Text);
-                enu.Tipo = enu.Tipo;
+                enu.Tipo = Tipo.Text;
                 if (enu.create())
                 {
                     LabelRespuesta.Text = "Suscripción creada.";
