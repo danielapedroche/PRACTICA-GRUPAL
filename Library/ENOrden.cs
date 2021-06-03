@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library
+namespace WabiSabiLibrary
 {
-    public class ENOrden
+    class ENOrden
     {
         private int id;
         private string descripcion;
@@ -31,10 +31,10 @@ namespace Library
             this.id = id;
             this.descripcion = descripcion;
         }
-        public ENOrden(ENReseña orden)
+        public ENOrden(ENReseña reseña)
         {
-            this.id = orden.Id;
-            this.descripcion = orden.Contenido;
+            this.id = orden.id;
+            this.descripcion = orden.descripcion;
         }
         public bool create()
         {

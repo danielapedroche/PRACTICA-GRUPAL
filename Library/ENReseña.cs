@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library
+namespace WabiSabiLibrary
 {
-   public class ENReseña
+    class ENReseña
     {
         private int id;
         private string contenido;
