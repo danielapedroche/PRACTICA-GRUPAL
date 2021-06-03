@@ -13,7 +13,7 @@
     </div>
     <div>
         Id:
-        <asp:TextBox ID="Numero_resenya" runat="server"  Width="173px"></asp:TextBox>
+        <asp:TextBox ID="Numero" runat="server"  Width="173px"></asp:TextBox>
         <br />
         <br />
         Contenido:

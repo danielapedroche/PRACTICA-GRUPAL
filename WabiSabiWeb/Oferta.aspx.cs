@@ -4,32 +4,26 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Library;
 namespace WabiSabiWeb
 {
     public partial class Oferta : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("InvitadOferta.aspx");
+            }
+            else if (Session["Username"].ToString() == "root")
+            {
+                Response.Redirect("RootOFERTA.aspx");
+            }
+            else
+            {
+                Response.Redirect("clienteOFERTA.aspx");
+            }
         }
-
-        
-            protected void Read_Click(object sender, EventArgs e)
-            {
-
-            }
-            protected void Update_Click(object sender, EventArgs e)
-            {
-
-            }
-            protected void Create_Click(object sender, EventArgs e)
-            {
-
-            }
-            protected void Delete_Click(object sender, EventArgs e)
-            {
-
-            }
     }
 }

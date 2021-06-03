@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class ENSuscripcion
+    public class ENSuscripcion
     {
         private int id;
         private string tipo;
