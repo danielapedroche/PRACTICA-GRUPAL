@@ -89,11 +89,11 @@ Como dificultades encontradas destacamos varias, en concreto las siguientes:
 
 - La falta de organización por nuestra parte, sobretodo durante las primeras entregas. 
 
-- Las dificultades que nos ha supuesto el trabajar con GitHub como herramienta de control de versiones, ya que era una herramienta nueva para nosotros y la resolución de conflictos a la hora de hacer merges nos ha llevado algún que otro quebradero de cabeza. 
+- Las dificultades que nos ha supuesto el trabajar con GitHub como herramienta de control de versiones, ya que era una herramienta nueva para nosotros y la resolución de conflictos a la hora de hacer merges nos ha llevado algún que otro quebradero de cabeza. LLegamos a crear un nuevo repositorio desde cero para poder hacer la última entrega, por ello en este, solo hay 1 milestone. 
 
 10. CONCLUSIÓN
 
-Como conclusiones, sacamos varias y muy positivas. En primer lugar, lo mucho que hemos aprendido llevando a cabo este proyecto, trabajando con un lenguaje nuevo para nosotros (C#). En segundo lugar, hemos aprendido cómo trabajar con GitHub, una herramienta muy útil para trabajar de manera colaborativa y que seguro que nos va a servir de mucho en un futuro. Por último, hemos aprendido a organizarnos como equipo, algo que nos costó más con la primera entrega pero que, poco a poco, hemos mejorado notablemente. 
+Como conclusiones, sacamos varias y muy positivas. En primer lugar, lo mucho que hemos aprendido llevando a cabo este proyecto, trabajando con un lenguaje nuevo para nosotros (C#). En segundo lugar, hemos aprendido cómo trabajar con GitHub, una herramienta muy útil para trabajar de manera colaborativa y que seguro que nos va a servir de mucho en un futuro. Por último, hemos aprendido a organizarnos como equipo, algo que nos costó más con la primera entrega pero que, poco a poco, hemos mejorado notablemente, con la ayuda del reparto de tareas del tablón del proyecto. 
 
 En definitiva, este proyecto, aunque complicado, ha hecho que aprendamos y mejoremos como profesionales todos los miembros del equipo. 
 
