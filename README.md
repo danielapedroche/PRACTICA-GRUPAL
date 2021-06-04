@@ -70,6 +70,8 @@ Como posibles mejoras, la empresa contempla las siguientes:
            2. Usuario registrado: Podrá obtener todas las ventajas de la página
            NOTA: El formulario de registro es totalmente arcaico, sin ningún tipo de control de contraseñas, nombres etc. Tampoco se manejan excepciones, es una versión                          realmente temprana de lo que será o sería el funcionamiento final y el manejo de usuarios. Se ha dejado en esta fase tan temprana por decisión del desarrollador                  para centrarse en otras tareas de la página más importantes a nivel estructural, en el caso de publicar esta página web algún día el manejo de usuarios se                        realizaría de forma mucho más segura y profesional.
            3. Superusuario: Acceso mediante el NIF: 50386822D Contraseña: root Tendrá la funcionalidad de crear, borrar y actualizar para que un cliente habitual no pueda                      acceder a estas herramientas. Se ha implementado en las ofertas, el resto de secciones de la página se implementarán más adelante previo a la publicación de esta.
+      Diseño de la interfaz: La interfaz presenta un aspecto homogéneo en
+todas las páginas. Para la implemantazion de esta hemos empleado controles ASP.NET además de las hojas de estilo CSS. Para trabajar con estas y obtener el resultado final hemos navegado por multitud de foros, de los cuales hemos obtenido plantillas para la realizacion de la pagina inicial y su herencia a las demás. Finalmente mencionar que no se han utulizado ni AJAX, ni Silverlight.
 
 8. CAMBIOS CON RESPECTO DEL PROYECTO ORIGINAL
 
