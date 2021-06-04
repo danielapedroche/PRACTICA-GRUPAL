@@ -17,15 +17,13 @@ Wabi-Sabi es una empresa local ubicada en Alicante dedicada a la preparación y 
 
 2. PARTE PÚBLICA
 
-La vista de cliente PÚBLICA se realizará en Web Forms y estará encargada de los siguientes aspectos: 
+La vista de usuario PÚBLICA se realizará en Web Forms y estará encargada de los siguientes aspectos: 
 
-- El cliente accede a una página principal donde se muestran los diferentes platos elaborados de manera individual a modo de carta. El cliente podrá filtrar por alérgenos e intoleracias, orden (entratntes, platos principales y postres), platos más vendidos y platos en oferta. También podrá ver los menús semanales propuestos por la empresa. 
+- El usuario accederá a una página principal donde se podrá ver una descripción de lo que es la empresa Wabi-Sabi y un menú al que poder acceder para ver los diferentes platos, menús, etc. 
 
-- El cliente también podrá hacer uso de un buscador de platos, para buscar aluno en concreto. 
+- El usuario buscar los productos y acceder al detalle de los mismos clickeando sobre ellos. Si le gustara un producto en concreto, podrá añadirlo al carrito sin haber tenido que registrarse. 
 
-- El cliente podrá seleccionar tanto los platos como los menús propuestos y acceder al detalle de los mismos clickeando sobre ellos. Si le gustara el plato o el menú, podrá añadirlo al carrito sin haber tenido que registrarse. 
-
-- Por último, el cliente podrá registrarse para acceder a la parte privada. Si es un nuevo usuario, se mostrará un formulario de registro con los datos personales, login y password. 
+- Por último, el cliente usuario registrarse para acceder a la parte privada. Si es un nuevo usuario, se mostrará un formulario de registro con los datos personales, login y password. 
 
 
 3. LISTADO EN PÚBLICA
@@ -41,11 +39,10 @@ La vista de cliente PÚBLICA se realizará en Web Forms y estará encargada de l
 
 Registrándose, el usuario podrá realizar las siguientes acciones. 
 
-- El cliente podrá tramitar su pedido, indicando la dirección, el email y el número de tarjeta de crédito. Cuando se haya tramitado, recibirá una confirmación por parte de la empresa. 
+- El cliente tendrá acceso a ofertas especiales de usuarios socios. 
 
-- El cliente podrá consultar, modificar o cancelar su pedido. 
+- El cliente podrá tramitar su pedido, comprando lo que haya en el carrito. 
 
-- El cliente podrá hacer un seguimiento del pedido. 
 
 5. LISTADO EN PRIVADA
 
