@@ -55,7 +55,7 @@ namespace Library
                 {
                     while (dr.Read())
                     {
-                        en.Nombre = en.Nombre + " " + dr.GetString(1) + " " + dr.GetDouble(3) + "€ ,";
+                        en.Nombre = en.Nombre + " " + dr.GetString(1) + " " + dr.GetDouble(3) + "€   ";
                         en.CosteTotal = en.CosteTotal + dr.GetDouble(3);
                     }
 
@@ -93,7 +93,7 @@ namespace Library
                 {
                     while (dr.Read())
                     {
-                        en.Nombre = en.Nombre + " " + dr.GetString(1) + " " + dr.GetDouble(2) + "€ ,";
+                        en.Nombre = en.Nombre + " " + dr.GetString(1) + " " + dr.GetDouble(2) + "€   ";
                         en.CosteTotal = en.CosteTotal + dr.GetDouble(2);
                     }
 

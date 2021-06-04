@@ -61,7 +61,7 @@ namespace Library
         public bool updateCarrito2()
         {
             CADCarrito cad = new CADCarrito();
-            return cad.updateCarrito(this);
+            return cad.updateCarrito2(this);
 
         }
         public bool deleteCarrito()

@@ -4,15 +4,20 @@
         .auto-style1 {
             font-size: x-large;
         }
+        .auto-style2 {
+            font-size: x-large;
+            color: #339966;
+            text-decoration: underline;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <p class="auto-style2">
+        <strong>Carrito:</strong></p>
     <p class="auto-style1">
-        Carrito</p>
+        Productos: <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p>
     <p class="auto-style1">
-        Producto :<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p>
-    <p class="auto-style1">
-        Menu :<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></p>
+        Menus: <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></p>
     <p class="auto-style1">
         Total:<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
     </p>
