@@ -29,8 +29,6 @@
         <div style="width:100%;text-align:right;">
 
              <asp:Button ID="ButtonUser" runat="server" Text="Login/Register" OnClick ="Navigate_Usuario" />
-            <asp:Button id="button1" Text="Noche"
-        BackColor="#FFCC80" runat="server" />
     </div>
      <div>
           

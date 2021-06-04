@@ -22,7 +22,7 @@
     <p class="auto-style1">
 
         Domicilio:
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="Tex" runat="server"></asp:TextBox>
     </p>
     <p class="auto-style1">
         Seleccione un método de pago:</p>

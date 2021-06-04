@@ -23,10 +23,10 @@ namespace WabiSabiWeb
             if (Session["Direccion"] != null)
             {
                 resultado = true;
-                en.Direccion = TextBox1.Text;
+                en.Direccion = Tex.Text;
             }
             else
-                en.Direccion = TextBox1.Text;
+                en.Direccion = Tex.Text;
 
             if (Session["CosteTotal"] != null)
             {
