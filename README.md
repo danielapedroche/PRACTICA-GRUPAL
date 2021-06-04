@@ -1,6 +1,6 @@
 # PRACTICA-GRUPAL
 
-PROPUESTA DE PROYECTO GRUPAL - GRUPO 5 - HADA
+PROYECTO GRUPAL - GRUPO 5 - HADA
 
 COMPONENTES DEL GRUPO:
 
@@ -62,6 +62,43 @@ Como posibles mejoras, la empresa contempla las siguientes:
 
 - Una sección de reseñas en las que el cliente pueda puntuar los platos. Estas reserñas se harán públicas para el resto de usuarios. 
 
+7. CAMBIOS CON RESPECTO DEL PROYECTO ORIGINAL
 
+En cuanto a los cambios, en un principio, nuestra idea en cuanto a mejoras era proponer una internacionalización (traducción) y un sistema de rastreo del pedido. Finalmente, decidimos que queríamos implementar reseñas y suscripciones en su lugar, lo cual supusieron 2 EN extra que llevaron más horas de trabajo. 
+
+Además, nuestra idea era implementar las clases alérgenos y orden, pero conforme avanzó la asignatura, vimos que eran dos clases innecesarias para la interfaz en sí con lo cual el trabajo que había elaborado Francisco implementando esas clases lo mantuvimos pero en lugar de añadirlas en la interfaz, para la última entrega, el se encargó de crear la Master Site y del diseño de la porpia interfaz, lo cual nos fue de gran ayuda. 
+
+8. TAREAS HECHAS POR CADA MIEMBRO DEL EQUIPO
+
+
+| ALUMNO        | TTAREAS IMPLEMENTADAS |
+| ------------- | ------------- |
+| Daniela Blanca Pedroche van Deurzen  | ENProducto, CADProducto, Producto.aspx, ENReseña, CADReseña, Reseña.aspx  |
+| Rocío García Robles  | ENSuscripcion, CADSuscripcion, Suscripcion.aspx, ENMenu, CADMenu, Menu.aspx  |
+| Francisco García Martínez  | ENOrden, CADOrden, ENAlergenos, CADAlergenos, SiteMaster y diseño de la interfaz |
+| Alejandro García Paterna  | ENPedido, CADPedido, ENCarrito, CADCarrito, Carrito.aspx, Pedido.aspx |
+| Jose Clavel Pérez-Seoane | ENUsuario, CADUsuario, ENOferta, CADOferta, Oferta.aspx, OfertaInvitado.aspx, OfertaROOT.aspx |
+
+9. DIFICULTADES ENCONTRADAS
+
+Como dificultades encontradas destacamos varias, en concreto las siguientes:
+
+- La complejidad para trabajar con visual studio si no dispones de un ordneador con sistema operativo Windows, ya que trabajar con la máquina virtual, ha supuesto muchas horas extra de tiempo debido a la lenitud del procesamiento. 
+
+- La carga de trabajo de otras asignaturas sumada con la de esta en plenas semanas previas a exámenes. 
+
+- La falta de organización por nuestra parte, sobretodo durante las primeras entregas. 
+
+- Las dificultades que nos ha supuesto el trabajar con GitHub como herramienta de control de versiones, ya que era una herramienta nueva para nosotros y la resolución de conflictos a la hora de hacer merges nos ha llevado algún que otro quebradero de cabeza. 
+
+10. CONCLUSIÓN
+
+Como conclusiones, sacamos varias y muy positivas. En primer lugar, lo mucho que hemos aprendido llevando a cabo este proyecto, trabajando con un lenguaje nuevo para nosotros (C#). En segundo lugar, hemos aprendido cómo trabajar con GitHub, una herramienta muy útil para trabajar de manera colaborativa y que seguro que nos va a servir de mucho en un futuro. Por último, hemos aprendido a organizarnos como equipo, algo que nos costó más con la primera entrega pero que, poco a poco, hemos mejorado notablemente. 
+
+En definitiva, este proyecto, aunque complicado, ha hecho que aprendamos y mejoremos como profesionales todos los miembros del equipo. 
+
+11. LINK A LA PRESENTACIÓN. 
+
+https://drive.google.com/file/d/1k2zSEbxHXYcS8Zkf5l3QgOR6BFrQ-E3K/view
 
 
