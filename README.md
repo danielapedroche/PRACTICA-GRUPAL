@@ -71,7 +71,7 @@ Además, nuestra idea era implementar las clases alérgenos y orden, pero confor
 8. TAREAS HECHAS POR CADA MIEMBRO DEL EQUIPO
 
 
-| ALUMNO        | TTAREAS IMPLEMENTADAS |
+| ALUMNO        | TAREAS IMPLEMENTADAS |
 | ------------- | ------------- |
 | Daniela Blanca Pedroche van Deurzen  | ENProducto, CADProducto, Producto.aspx, ENReseña, CADReseña, Reseña.aspx  |
 | Rocío García Robles  | ENSuscripcion, CADSuscripcion, Suscripcion.aspx, ENMenu, CADMenu, Menu.aspx  |
