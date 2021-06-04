@@ -13,16 +13,31 @@ namespace WabiSabiWeb
         private bool resultado;
         protected void Page_Load(object sender, EventArgs e)
         {
+            double total = 0.0;
             ENCarrito en = new ENCarrito();
             resultado = en.updateCarrito();
             if (resultado)
             {
-                Label2.Text = "Resumen pedido:" + en.Nombre;
-                Label3.Text =" " + en.CosteTotal.ToString();
-                Session["CosteTotal"] = en.CosteTotal.ToString();
+                Label2.Text = en.Nombre;
+                total += en.CosteTotal;
+                Session["CosteTotal"] = total.ToString();
             }
             else
                 Label1.Text = "Error al mostrar el pedido";
+
+            ENCarrito enu = new ENCarrito();
+            resultado = enu.updateCarrito2();
+            if (resultado)
+            {
+                Label4.Text = enu.Nombre;
+                total += enu.CosteTotal;
+                Session["CosteTotal"] = total.ToString();
+            }
+            else
+                Label1.Text = "Error al mostrar el pedido";
+
+            Label3.Text = total.ToString() + "€";
+            
         }
         protected void Update_Click(object sender, EventArgs e)
         {

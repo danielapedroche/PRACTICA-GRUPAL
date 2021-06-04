@@ -11,6 +11,7 @@ namespace Library
         private int id;
         private string nombre;
         private float precio;
+        private int pedido;
         public int Id
         {
             get { return id; }
@@ -26,23 +27,31 @@ namespace Library
             get { return precio; }
             set { precio = value; }
         }
+        public int Pedido
+        {
+            get { return pedido; }
+            set { pedido = value; }
+        }
         public ENMenu()
         {
             id = 0;
             nombre = "";
             precio = 0;
+            pedido = 0;
         }
-        public ENMenu(int id, string nombre, float precio)
+        public ENMenu(int id, string nombre, float precio, int pedido)
         {
             this.id = id;
             this.nombre = nombre;
             this.precio = precio;
+            this.pedido = pedido;
         }
         public ENMenu(ENMenu producto)
         {
             this.id = producto.id;
             this.nombre = producto.nombre;
             this.precio = producto.precio;
+            this.pedido = producto.pedido;
         }
         public bool create()
         {

@@ -12,7 +12,7 @@ namespace WabiSabiWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Welcome.Text = "Hola" + Session["Username"] + "las ofertas disponibles para los socios de WabiSabi son: ";
+            Welcome.Text = "Bienvenido/a, " + Session["Username"] + " Las ofertas disponibles para los socios de WabiSabi son: ";
             Welcome.Visible = true;
             ENOferta oferta = new ENOferta();
             oferta.Solousuarios = 0;

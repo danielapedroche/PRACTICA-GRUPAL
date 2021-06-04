@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
+using System.Threading;
 
 namespace WabiSabiWeb
 {
@@ -31,7 +32,7 @@ namespace WabiSabiWeb
             {
                 Label1.Text = "Creación satisfactoria";
                 Label1.Visible = true;
-                Response.Redirect("Usuario.aspx");
+                Response.Redirect("ClienteOFERTA.aspx");
             }
             else
             {

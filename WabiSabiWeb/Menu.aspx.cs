@@ -86,5 +86,22 @@ namespace WabiSabiWeb
             }
 
         }
+        protected void Carrito_Click(object sender, EventArgs e)
+        {
+            ENMenu enu = new ENMenu();
+            enu.Id = int.Parse(Numero.Text);
+            enu.Nombre = Nombre.Text;
+            enu.Precio = float.Parse(Precio.Text);
+            enu.Pedido = 1;
+            if (enu.update())
+            {
+                LabelRespuesta.Text = "El menu ha sido añadido al carrito.";
+            }
+            else
+            {
+                LabelRespuesta.Text = "Error, no se ha podido añadir el menu al carrito.";
+            }
+        }
     }
+
 }

@@ -29,8 +29,6 @@
         <div style="width:100%;text-align:right;">
 
              <asp:Button ID="ButtonUser" runat="server" Text="Login/Register" OnClick ="Navigate_Usuario" />
-            <asp:Button id="button1" Text="Noche"
-        BackColor="#FFCC80" runat="server" />
     </div>
      <div>
           
@@ -56,6 +54,7 @@
                                     <asp:MenuItem NavigateUrl="~/Carrito.aspx" Text="Carrito" Value="Carrito"></asp:MenuItem> 
                                     <asp:MenuItem Text="Suscripcion" Value="Suscripción" NavigateUrl="~/Suscripcion.aspx"></asp:MenuItem> 
                                     <asp:MenuItem NavigateUrl="~/Reseña.aspx" Text="Reseña" Value="Reseña"></asp:MenuItem> 
+                                     <asp:MenuItem NavigateUrl="~/Oferta.aspx" Text="Oferta" Value="Oferta"></asp:MenuItem> 
                                     
                                 </Items>
                                 <LevelSelectedStyles>

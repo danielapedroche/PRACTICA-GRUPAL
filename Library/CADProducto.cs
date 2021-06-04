@@ -70,7 +70,7 @@ namespace Library
         public bool update(ENProducto en)
         {
             SqlConnection conn = new SqlConnection(constring);
-            string comando = "UPDATE [dbo].[Producto] " + "SET nombre = '" + en.Nombre + "',  descripcion = '" + en.Descripcion + "',  precio = " + en.Precio + " where Codigo ='" + en.Codigo + "'";
+            string comando = "UPDATE [dbo].[Producto] " + "SET nombre = '" + en.Nombre + "',  descripcion = '" + en.Descripcion + "',  precio = '" + en.Precio + "', pedido = '" + en.Pedido + "' where Codigo ='" + en.Codigo + "'";
             try
             {
                 conn.Open();

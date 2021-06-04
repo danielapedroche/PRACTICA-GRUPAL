@@ -15,31 +15,31 @@ namespace WabiSabiWeb
     {
 
         /// <summary>
-        /// Control Efectivo.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Efectivo;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control PayPal.
+        /// Control Tex.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox PayPal;
+        protected global::System.Web.UI.WebControls.TextBox Tex;
 
         /// <summary>
-        /// Control Tarjeta.
+        /// Control CheckBoxList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox Tarjeta;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
 
         /// <summary>
         /// Control Codigo.
