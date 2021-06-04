@@ -10,8 +10,9 @@
     <p class="auto-style1">
         Carrito</p>
     <p class="auto-style1">
-        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-    </p>
+        Producto :<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p>
+    <p class="auto-style1">
+        Menu :<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label></p>
     <p class="auto-style1">
         Total:<asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
     </p>

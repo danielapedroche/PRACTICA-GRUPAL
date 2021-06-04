@@ -30,6 +30,9 @@
         &nbsp;
         <asp:Button ID="Borrar" runat="server" Text="Borrar" OnClick="Delete_Click"/>
         <br />
+        &nbsp;
+        <asp:Button ID="Carrito" runat="server" Text="Carrito" OnClick="Carrito_Click"/>
+        <br />
         <asp:label ID="LabelRespuesta" runat="server" Text=" " />
     </div>
 </asp:Content>

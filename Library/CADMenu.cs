@@ -118,7 +118,7 @@ namespace Library
 
             SqlConnection conn = new SqlConnection(constring);
 
-            string comando = "UPDATE [dbo].[Menu] " + "SET nombre = '" + en.Nombre + "',  precio = " + en.Precio + "where id ='" + en.Id + "'";
+            string comando = "UPDATE [dbo].[Menu] " + "SET nombre = '" + en.Nombre + "',  precio = '" + en.Precio + "',  pedido = '" + en.Pedido + "'where id ='" + en.Id + "'";
 
             try
 
@@ -132,10 +132,10 @@ namespace Library
 
             }
 
-            catch (Exception)
+            catch (Exception e)
 
             {
-
+                Console.WriteLine("Error: " + e);
                 conn.Close();
 
                 return false;

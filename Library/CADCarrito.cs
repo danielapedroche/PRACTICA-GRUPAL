@@ -77,7 +77,44 @@ namespace Library
             }
             return true;
         }
+        public bool updateCarrito2(ENCarrito en)
+        {
+            SqlConnection conn = null;
+            String comando = "Select * from Menu where pedido = '" + 1 + "'";
 
+            try
+            {
+                conn = new SqlConnection(constring);
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(comando, conn);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        en.Nombre = en.Nombre + " " + dr.GetString(1) + " " + dr.GetDouble(2) + "€ ,";
+                        en.CosteTotal = en.CosteTotal + dr.GetDouble(2);
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+
+                dr.Close();
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            finally
+            {
+                if (conn != null) conn.Close(); // Se asegura de cerrar la conexión.
+            }
+            return true;
+        }
         public bool readCarrito(ENCarrito en)
         {
             SqlConnection conn = null;
