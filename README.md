@@ -59,7 +59,19 @@ Como posibles mejoras, la empresa contempla las siguientes:
 
 - Una sección de reseñas en las que el cliente pueda puntuar los platos. Estas reserñas se harán públicas para el resto de usuarios. 
 
-7. CAMBIOS CON RESPECTO DEL PROYECTO ORIGINAL
+7. FUNCIONALIDAD E IMPLEMENTACIÓN DE CLASES
+    - Oferta: Las ofertas se visualizarán de 3 maneras: 
+           1. Un usuario invitado que no ha logeado verá las ofertas que están disponibles para todos los clientes que quieran aproximarse a nuestra empresa, las cuales serán                 menos en cantidad y en calidad respecto a los usuarios registrados los cuales obtendrán un mayor número de ofertas incluso ofertas personalizadas en un futuro.                   también se le invitará a registrarse para poder acceder a las ofertas de tipo 2. Esto le redirigirá a la página de registro.
+           2. EL usuario registrado verá las ofertas tanto para clientes sin registrar como para usuarios registrados y las suyas propias que haya generado la empresa para                     cierto sector de clientes (Funcionalidad por implementar) 
+           3. El superusuario (Trabajador de WabiSabi o subcontratado encargado del mantenimiento de la base de datos Oferta que mediante un login especial (usuario: 50386822D,                 contraseña: root) podrá acceder a la gestión de la base de datos pudiendo así añadir ofertas, quitándolas, modificarlas o leerlas. 
+
+    - Usuario: Manejamos 2 tipos de usuario: 
+           1. Usuario no registrado: conocido también como invitado tendrá una funcionalidad limitada y siempre podrá registrarse pulsando el botón que aparece arriba a la                     derecha (Login/Register)
+           2. Usuario registrado: Podrá obtener todas las ventajas de la página
+           NOTA: El formulario de registro es totalmente arcaico, sin ningún tipo de control de contraseñas, nombres etc. Tampoco se manejan excepciones, es una versión                          realmente temprana de lo que será o sería el funcionamiento final y el manejo de usuarios. Se ha dejado en esta fase tan temprana por decisión del desarrollador                  para centrarse en otras tareas de la página más importantes a nivel estructural, en el caso de publicar esta página web algún día el manejo de usuarios se                        realizaría de forma mucho más segura y profesional.
+           3. Superusuario: Acceso mediante el NIF: 50386822D Contraseña: root Tendrá la funcionalidad de crear, borrar y actualizar para que un cliente habitual no pueda                      acceder a estas herramientas. Se ha implementado en las ofertas, el resto de secciones de la página se implementarán más adelante previo a la publicación de esta.
+
+8. CAMBIOS CON RESPECTO DEL PROYECTO ORIGINAL
 
 En cuanto a los cambios, en un principio, nuestra idea en cuanto a mejoras era proponer una internacionalización (traducción) y un sistema de rastreo del pedido. Finalmente, decidimos que queríamos implementar reseñas y suscripciones en su lugar, lo cual supusieron 2 EN extra que llevaron más horas de trabajo. 
 
